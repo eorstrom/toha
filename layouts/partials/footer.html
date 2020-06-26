@@ -5,7 +5,7 @@
         <h5>Navigation</h5>
         {{ if .Site.Data.site }}
           <ul>
-            {{ range .Site.Data.site.menus }}
+            {{ range .Site.Data.site.menus.main }}
             <li class="nav-item">
               <a class="smooth-scroll" href="{{ .url }}">{{ .name }}</a>
             </li>
@@ -20,6 +20,7 @@
           <li><span>{{ title $key }}: </span> <span>{{ $value }}</span></li>
           {{ end }}
         </ul>
+        <a href="/contact/">Send Me a Message!</a>
       </div>
       <div class="col-md-4 col-sm-12">
         <!-- <h5>Newsletter</h5> -->
@@ -46,12 +47,12 @@
   <div class="container">
     <div class="row text-left">
       <div class="col-md-4">
-        <a id="theme" href="https://github.com/hossainemruz/toha" target="#">
+        <a id="theme" href="https://github.com/hossainemruz/toha" target="_blank">
           <img src="/assets/images/logo-inverted.png">
           Toha
         </a>
       </div>
-      <div class="col-md-4">© 2019 Copyright.</div>
+      <div class="col-md-4">{{ replace .Site.Copyright "{year}" now.Year }}</div>
       <div class="col-md-4">
         Powered by <a href="https://gohugo.io/">Hugo
         <img

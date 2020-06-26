@@ -28,12 +28,13 @@
             aria-label="Star {{ .name }}"
             >Star</a
           >
-          {{ else if .url }}
+          {{ end }}
+          {{ if .url }}
           <a
             class="btn btn-outline-info btn-sm mb-2"
             href="{{ .url }}"
             target="#"
-            >Details</a
+            >Website</a
           >
           {{ end }}
         </span>
