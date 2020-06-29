@@ -16,7 +16,7 @@
 
     <div class="collapse navbar-collapse" id="top-nav-items">
       <ul class="navbar-nav ml-auto">
-        {{ range .Site.Data.site.menus }}
+        {{ range .Site.Data.site.menus.main }}
         <li class="nav-item">
           <a class="nav-link smooth-scroll" href="{{ .url }}">{{ .name }}</a>
         </li>
@@ -24,6 +24,12 @@
         <div class="dropdown-divider" id="top-navbar-divider"></div>
         <li class="nav-item">
           <a class="nav-link" id="blog-link" href="/posts">Blog</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contact">Contact</a>
         </li>
       </ul>
     </div>
