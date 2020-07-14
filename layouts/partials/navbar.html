@@ -16,7 +16,7 @@
 
     <div class="collapse navbar-collapse" id="top-nav-items">
       <ul class="navbar-nav ml-auto">
-        {{ range .Site.Data.site.menus }}
+        {{ range .Site.Data.site.menus.main }}
         <li class="nav-item">
           <a class="nav-link smooth-scroll" href="{{ .url }}">{{ .name }}</a>
         </li>
