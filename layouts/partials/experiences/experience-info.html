@@ -5,7 +5,7 @@
     <p class="text-muted">{{ .start }} - {{ if .end }} {{ .end }} {{ else }}Present{{ end }}, {{ .company.location }}</p>
   </div>
   <p>{{ .company.overview | markdownify }}</p>
-  <h6 class="text-muted">Responsibilities:</h6>
+  <h6 class="text-muted">Achievements & Responsibilities:</h6>
   <ul class="justify-content-around">
       {{ range .responsibilities }}
         <li>{{ . | markdownify }}</li>
