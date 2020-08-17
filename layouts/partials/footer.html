@@ -8,7 +8,7 @@
           {{- range sort .Site.Data.sections "section.weight" }}
             {{ if and (.section.enable) (.section.showOnNavbar)}}
             <li class="nav-item">
-              <a class="smooth-scroll" href="#{{ replace (lower .section.name) " " "-" }}">{{ .section.name }}</a>
+              <a class="smooth-scroll" href="/#{{ replace (lower .section.name) " " "-" }}">{{ .section.name }}</a>
             </li>
             {{ end }}
           {{- end }}
@@ -25,6 +25,7 @@
         </ul>
         <a href="{{ .Site.BaseURL }}/contact/">Send Me a Message!</a>
       </div>
+      {{ if .Site.Params.newsletter.enable }}
       <div class="col-md-4 col-sm-12">
         <!-- <h5>Newsletter</h5>
         <p>Stay up to date with email notifications</p>
@@ -44,20 +45,21 @@
           <button type="submit" class="btn btn-info">Submit</button>
         </form> -->
       </div>
+      {{ end }}
     </div>
   </div>
   <hr />
   <div class="container">
     <div class="row text-left">
       <div class="col-md-4">
-        <a id="theme" href="https://github.com/hossainemruz/toha" target="_blank">
-          <img src="/assets/images/logo-inverted.png">
+        <a id="theme" href="https://github.com/hossainemruz/toha" target="#">
+          <img src="/assets/images/inverted-logo.png">
           Toha
         </a>
       </div>
-      <div class="col-md-4">{{ replace .Site.Copyright "{year}" now.Year }}</div>
-      <div class="col-md-4">
-        Powered by <a href="https://gohugo.io/">Hugo
+      <div class="col-md-4 text-center">{{ if .Site.Params.copyright }}{{ .Site.Params.copyright }}{{ else }}© 2020 Copyright.{{ end }}</div>
+      <div class="col-md-4 text-right">
+        <a id="hugo" href="https://gohugo.io/">Powered by Hugo
         <img
           src="/assets/images/hugo-logo-wide.svg"
           alt="Hugo Logo"

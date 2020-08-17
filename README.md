@@ -59,9 +59,13 @@ markup:
   goldmark:
     renderer:
       unsafe: true
+  tableOfContents:
+    startLevel: 2
+    endLevel: 6
+    ordered: false
 
 # Enable Google Analytics
-googleAnalytics: UA-xxxxxxxx
+googleAnalytics: UA-XXXXXXXXX-X
 
 # Enable Disqus forum
 disqusShortname: does-not-exist
@@ -71,11 +75,21 @@ enableEmoji: true
 
 # Custom parameters
 params:
-  # copyright
+  # Copyright Notice
   copyright: © 2020 Copyright.
+
+  # Meta description for your site.  This will help the search engines to find your site.
+  description: Portfolio and personal blog of Jane Doe.
 
   # background image of the landing page
   background: "images/background.jpg"
+
+  # Provide logos for your site. The inverted logo will be used in the initial
+  # transparent navbar and the main logo will be used in the non-transparent navbar.
+  # It will be default to the theme logos if not provided.
+  logo:
+    main: /assets/images/main-logo.png
+    inverted: /assets/images/inverted-logo.png
 
   # GitHub repo URL of your site
   gitRepo: https://github.com/hossainemruz/toha-example-site
@@ -83,15 +97,24 @@ params:
   # specify whether you want to write blog post or not
   enableBlogPost: true
 
+  # specify whether you want to show Table of Contents in reading page
+  enableTOC: true
+
   # specify the list of custom menus that you want to show in the top navbar.
   # they will be separated by a divider from the main menus.
   customMenus:
   - name: Notes
     url: https://hossainnotes.netlify.app/docs/example/
 
+  # Provide newsletter configuration. This feature hasn't been implemented yet.
+  # Currently, you can just hide it from the footer.
+  newsletter:
+    enable: true
+
   # some information about you
   author:
     name: "Jane Doe"
+    nickname: "Jane"
     image: "images/avatar.png"
     # give your some contact information. they will be used in the footer
     contactInfo:
@@ -114,11 +137,9 @@ Run your hugo site with this theme.
 hugo server -w
 ```
 
-Don't panic if the generated site does not look like what have you seen in the demo. Now, you have to provide some data in `data` folder of your site.
+When you first run your site, it will start with the default parameters. It should look similar to the [example site](https://toha.netlify.app) except it will not have any sections in the homepage. Those sections are added via some data files.
 
-Follow the posts giving step by step instructions for configuring your data folder from [here](https://toha.netlify.app/posts/configuration/home-section/home-section/).
-
-You can also follow the sample format given in `themes/toha/exampleSite/data` directory.
+You can configure your site by following the step by step guides from [here](https://toha.netlify.app/posts/configuration/).
 
 ## Shortcodes
 
@@ -192,7 +213,7 @@ Here, are the current plan and progress of various components of this theme. The
 
 - [x] Post Cards
 - [x] Sidebar
-- [ ] Pagination
+- [x] Pagination
 
 ### Reading Page
 
@@ -201,7 +222,7 @@ Here, are the current plan and progress of various components of this theme. The
 - [x] Next & Previous Page Navigation
 - [x] `Improve This Page` Button
 - [x] Disqus Comment
-- [ ] Option to navigate to list page
+- [x] Option to navigate to list page
 
 ### Tracking and Comments
 

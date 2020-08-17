@@ -1,13 +1,21 @@
-<nav class="navbar navbar-expand-lg top-navbar initial-navbar" id="top-navbar">
+<nav class="navbar navbar-expand-xl top-navbar initial-navbar" id="top-navbar">
   <div class="container">
+    {{ $mainLogo:="/assets/images/main-logo.png" }}
+    {{ $invertedLogo:="/assets/images/inverted-logo.png" }}
+    {{ if .Site.Params.logo.main }}
+      {{ $mainLogo = .Site.Params.logo.main }}
+    {{ end }}
+    {{ if .Site.Params.logo.inverted }}
+      {{ $invertedLogo = .Site.Params.logo.inverted }}
+    {{ end }}
     <a class="navbar-brand" href="{{ .Site.BaseURL }}">
-      <img src="/images/2016_05_19_NSS_Cohort_12_0274_T_cropped_246x246.jpg" id="logo">
+      <img src="{{ $invertedLogo }}" id="logo">
       {{- .Site.Title -}}
     </a>
     <button
       class="navbar-toggler navbar-dark"
       id="navbar-toggler"
-      ,type="button"
+      type="button"
       data-toggle="collapse"
       data-target="#top-nav-items"
     >
@@ -17,13 +25,13 @@
     <div class="collapse navbar-collapse" id="top-nav-items">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link smooth-scroll" href="#home">Home</a>
+          <a class="nav-link" href="#home">Home</a>
         </li>
         {{- if .Site.Data.sections }}
           {{- range sort .Site.Data.sections "section.weight" }}
             {{ if and (.section.enable) (.section.showOnNavbar)}}
               <li class="nav-item">
-                <a class="nav-link smooth-scroll" href="#{{ replace (lower .section.name) " " "-" }}">{{ .section.name }}</a>
+                <a class="nav-link" href="#{{ replace (lower .section.name) " " "-" }}">{{ .section.name }}</a>
               </li>
             {{ end }}
           {{- end }}
@@ -50,4 +58,7 @@
       </ul>
     </div>
   </div>
+  <!-- Store the logo information in a hidden img for the JS -->
+  <img src="{{ $mainLogo }}" class="d-none" id="main-logo">
+  <img src="{{ $invertedLogo }}" class="d-none" id="inverted-logo">
 </nav>
