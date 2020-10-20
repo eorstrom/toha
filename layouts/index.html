@@ -6,6 +6,8 @@
     <!-- import common headers -->
     {{- partial "header.html" . -}}
 
+    {{ partial "google/tag-manager-head.html" . }}
+
     <!-- import index page specific headers -->
     <link rel="stylesheet" href="/assets/css/sections/home.css" />
     <link rel="stylesheet" href="/assets/css/sections/about.css" />
@@ -21,6 +23,8 @@
     {{ end }}
   </head>
   <body data-spy="scroll" data-target="#top-navbar" data-offset="100">
+
+    {{ partial "google/tag-manager-body.html" . }} 
 
     <!--- NAVBAR ------------------------->
     {{- partial "navigators/navbar.html" . -}}
