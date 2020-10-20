@@ -42,9 +42,13 @@
           <li><span>{{ title $key }}: </span> <span>{{ $value }}</span></li>
           {{ end }}
         </ul>
-        <a href="{{ .Site.BaseURL }}/contact/">Send Me a Message!</a>
-        <a href="https://calendar.x.ai/erinorstrom" target="_blank">Schedule a meeting with me</a>
-      </div>
+        <div>
+          <a href="{{ .Site.BaseURL }}/contact/">Send Me a Message!</a>
+        </div>
+        <div>
+          <a href="https://calendar.x.ai/erinorstrom" target="_blank">Schedule a meeting with me</a>
+        </div>
+        </div>
       {{ end }}
       {{ if .Site.Params.newsletter.enable }}
       <div class="col-md-4 col-sm-12">
